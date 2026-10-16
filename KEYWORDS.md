@@ -6,7 +6,7 @@
 | `status` | Current app + phase, last done, next step (3 lines) |
 | `portfolio` | App sequence + status of every app |
 | `next app` | Close the current app and start the next slot |
-| `new app <slug> flutter` / `unity` | Creates the app folder and starts planning |
+| `new app <slug> flutter` / `unity` | Creates apps/<slug> + a private GitHub repo from the kit templates, starts planning |
 | `next` | Starts the skill for the current phase |
 | `new idea` / `no idea, suggest 5` | Planner, mode A / B |
 | `idea: <one line>` | Planner starts the interview on that idea |
@@ -25,7 +25,7 @@
 | `weekly` + your numbers | Post-launch review and decisions |
 | `v1.1` | Planner, post-launch mode |
 | `handoff` | Compacts the chat into HANDOFF.md |
-| `resume` | Continues from HANDOFF.md in a new chat |
+| `resume <slug>` | Pulls the studio + app repos, continues from HANDOFF.md |
 
 ## In Claude Code (Mac terminal)
 | Type | What happens |

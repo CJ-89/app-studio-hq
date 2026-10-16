@@ -1,0 +1,42 @@
+# <App name> — instructions for Claude Code
+
+## What this is
+<One-liner from APP_BRIEF.> Spec: `docs/TECH_SPEC.md`. Design: `docs/DESIGN_SYSTEM.md` + `docs/design_tokens.json`. Task backlog: `docs/TASKS.md`.
+
+## Stack (locked — do not change without asking)
+- Flutter <version> (pinned) · Dart null-safe
+- State: Riverpod (codegen) · Navigation: go_router · Models: freezed + json_serializable
+- Backend: <PocketBase/Supabase self-hosted on Coolify / none> at `<API_BASE_URL per flavor>` · Ads: AdMob via `AdsService` · Remove-ads IAP: <yes/no> · Crash/analytics: Firebase
+- Lints: very_good_analysis
+
+## Structure
+- Feature-first: `lib/features/<feature>/{data,domain,ui}`; shared code in `lib/core`, app shell in `lib/app`.
+- Tests mirror `lib/` under `test/`.
+- Work inside the feature folder named in the task. Don't touch other features unless the task says so.
+
+## Rules
+- UI never calls the backend directly — go through a repository.
+- No hard-coded colors, sizes or strings: use theme tokens and ARB localization.
+- Never put secrets or paid API keys in the app. Use `--dart-define` only for public config.
+- Ads: only through `AdsService`; dev flavor uses Google test ad unit IDs — never real ad IDs in dev or tests.
+- Don't add a new package without stating why in the summary.
+- Don't modify generated files (`*.g.dart`, `*.freezed.dart`); run build_runner instead.
+
+## Commands
+- Get deps: `flutter pub get`
+- Codegen: `dart run build_runner build --delete-conflicting-outputs`
+- Check: `flutter analyze` then `flutter test`
+- Run dev: `flutter run --flavor dev -t lib/main_dev.dart`
+- Release bundle: `flutter build appbundle --flavor prod -t lib/main_prod.dart --obfuscate --split-debug-info=build/symbols`
+
+## Definition of done (every task)
+1. Acceptance criteria in the task are met.
+2. New logic has unit tests; new screens have at least one widget test.
+3. `flutter analyze` has zero issues and `flutter test` passes.
+4. Update `docs/TASKS.md` status for this task.
+5. Reply with a summary of max 5 lines: what changed, files touched, anything risky or left undone.
+
+## Token discipline
+- Read only files needed for the task. Prefer searching over reading whole directories.
+- When showing errors, include only the relevant lines.
+- Keep replies short; no restating the task.

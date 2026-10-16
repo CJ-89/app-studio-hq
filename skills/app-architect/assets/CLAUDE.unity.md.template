@@ -1,0 +1,33 @@
+# <Game name> — instructions for Claude Code (Unity)
+
+## What this is
+<One-liner from APP_BRIEF.> Spec: `docs/TECH_SPEC.md`. Design: `docs/DESIGN_SYSTEM.md`. Tasks: `docs/TASKS.md`.
+
+## Stack (locked)
+- Unity <exact version> · URP <2D/3D> · IL2CPP ARM64 · Input System
+- Ads: AdMob (Google Mobile Ads Unity plugin) via `AdsService` · IAP: Unity IAP · Crash/analytics: Firebase
+- Tests: Unity Test Framework (EditMode + PlayMode)
+
+## Structure
+- All project code under `Assets/_Project/`; one Assembly Definition per Scripts subfolder.
+- Logic in plain C# classes (testable); MonoBehaviours thin.
+- Config in ScriptableObjects under `Assets/_Project/ScriptableObjects/`.
+
+## Hard rules
+- NEVER edit `.unity`, `.prefab`, `.asset` or `.meta` files directly. If wiring is needed, write an Editor script or list the manual Editor steps for me.
+- For every new `[SerializeField]`, tell me what to assign in the Inspector.
+- No `FindObjectOfType` in Update loops; cache references. Avoid allocations in Update (no LINQ, no string building per frame).
+- Dev builds use Google's test ad unit IDs only. Real IDs are set via the release config.
+- Don't add packages without stating why.
+
+## Commands (Mac)
+- Unity: `"/Applications/Unity/Hub/Editor/<ver>/Unity.app/Contents/MacOS/Unity"`
+- EditMode tests: `<Unity> -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testResults results.xml -logFile -`
+- Android .aab: `<Unity> -batchmode -quit -projectPath . -executeMethod BuildScript.BuildAndroid -logFile -`
+- If the Editor has the project open, batchmode can't run — ask me to close it or I'll run tests in the Editor.
+
+## Definition of done
+1. Acceptance criteria met. 2. Compiles with no errors or new warnings. 3. EditMode tests for new logic pass. 4. Manual Editor steps listed. 5. `docs/TASKS.md` updated. 6. Reply in ≤ 5 lines.
+
+## Token discipline
+Read only files the task names. Never read Library/ or large asset files. Show only relevant log lines.

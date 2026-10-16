@@ -1,0 +1,50 @@
+{
+  "meta": { "app": "<App name>", "version": 1, "direction": "<name>" },
+  "color": {
+    "light": {
+      "primary": "#000000", "onPrimary": "#FFFFFF",
+      "primaryContainer": "#000000", "onPrimaryContainer": "#FFFFFF",
+      "secondary": "#000000", "onSecondary": "#FFFFFF",
+      "tertiary": "#000000", "onTertiary": "#FFFFFF",
+      "surface": "#FFFFFF", "onSurface": "#000000",
+      "surfaceContainer": "#F3F3F3", "outline": "#7A7A7A",
+      "error": "#B3261E", "onError": "#FFFFFF",
+      "success": "#1B7F3B", "warning": "#9A6700"
+    },
+    "dark": {
+      "primary": "#FFFFFF", "onPrimary": "#000000",
+      "primaryContainer": "#000000", "onPrimaryContainer": "#FFFFFF",
+      "secondary": "#FFFFFF", "onSecondary": "#000000",
+      "tertiary": "#FFFFFF", "onTertiary": "#000000",
+      "surface": "#121212", "onSurface": "#E6E6E6",
+      "surfaceContainer": "#1E1E1E", "outline": "#8F8F8F",
+      "error": "#F2B8B5", "onError": "#601410",
+      "success": "#7DD99A", "warning": "#F0C674"
+    }
+  },
+  "typography": {
+    "fontHeading": "<Google Font>",
+    "fontBody": "<Google Font>",
+    "scale": {
+      "displayLarge": { "size": 57, "weight": 400, "lineHeight": 64 },
+      "headlineMedium": { "size": 28, "weight": 600, "lineHeight": 36 },
+      "titleLarge": { "size": 22, "weight": 600, "lineHeight": 28 },
+      "titleMedium": { "size": 16, "weight": 600, "lineHeight": 24 },
+      "bodyLarge": { "size": 16, "weight": 400, "lineHeight": 24 },
+      "bodyMedium": { "size": 14, "weight": 400, "lineHeight": 20 },
+      "labelLarge": { "size": 14, "weight": 600, "lineHeight": 20 }
+    }
+  },
+  "spacing": { "xxs": 4, "xs": 8, "sm": 12, "md": 16, "lg": 24, "xl": 32, "xxl": 48 },
+  "radius": { "sm": 8, "md": 12, "lg": 20, "full": 999 },
+  "elevation": { "card": 1, "dialog": 3, "nav": 2 },
+  "motion": {
+    "short": 150, "medium": 300, "long": 500,
+    "curveStandard": "easeInOutCubicEmphasized"
+  },
+  "components": {
+    "button": { "height": 48, "radius": "full" },
+    "input": { "style": "outlined", "radius": "md" },
+    "card": { "radius": "lg", "padding": "md" }
+  }
+}

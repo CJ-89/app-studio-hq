@@ -1,10 +1,8 @@
-# App Studio (root) — read by Claude Code for every app under this folder
+# App Studio kit — rules for Claude Code
 
-Use the **app-studio** skill to decide what's next. It holds my defaults, keywords, phase rules and the portfolio sequence.
+This repo is the **public kit**: skills, templates and scripts. It holds no personal data.
 
-- Portfolio and app order: `PORTFOLIO.md` (keep it updated).
-- Each app: `apps/<slug>/` with its own `CLAUDE.md` and `docs/` (APP_BRIEF, TECH_SPEC, DESIGN_SYSTEM, design_tokens.json, TASKS, LAUNCH_PLAN, HANDOFF).
-- Write phase files directly into `docs/`. Never ask me to copy files.
-- Start every session by answering `status` unless I ask something else.
-- One task per session; when a session gets long or a phase ends, write `docs/HANDOFF.md` and tell me to `/clear` and type `resume`.
-- Keep replies short: tables and bullets.
+- Never add personal data here: names, emails, server hostnames, account or ad IDs, portfolios, app docs. Those belong in your private studio repo (`studio.config.md`, `PORTFOLIO.md`, `apps/`).
+- Skills read personal defaults from `studio.config.md` in the studio root. Never hard-code them into a skill.
+- Keep `skills/*/assets/` and `templates/` in sync when you change a template.
+- Run `gitleaks detect` before every push.

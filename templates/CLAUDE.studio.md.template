@@ -1,0 +1,11 @@
+# My Studio (root) — read by Claude Code for every app under this folder
+
+Use the **app-studio** skill to decide what's next. My personal defaults live in `studio.config.md`. Read it instead of asking me.
+
+- Portfolio and app order: `PORTFOLIO.md` (keep it updated).
+- Each app: `apps/<slug>/` is its own private repo with its own `CLAUDE.md` and `docs/`. `apps/` is gitignored here.
+- Write phase files directly into `docs/`. Never ask me to copy files.
+- Start every session by answering `status` unless I ask something else.
+- At every phase end, use the **phase-auto-handoff** skill.
+- On `resume <slug>`: `git pull` here and in `apps/<slug>` first.
+- Keep replies short: tables and bullets.
