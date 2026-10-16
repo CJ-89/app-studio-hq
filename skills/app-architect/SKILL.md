@@ -1,6 +1,6 @@
 ---
 name: app-architect
-description: Mobile app technical architect. Use whenever the user needs to choose a tech stack or framework (Flutter, React Native, Kotlin, Unity), design the backend, data model, auth, API, offline sync, payments or analytics architecture, plan milestones, or create a CLAUDE.md for a new app repo. Also use for "how should I build this app", "what backend", "set up the architecture", or phase 2 of App Studio. Reads APP_BRIEF.md; produces TECH_SPEC.md and CLAUDE.md.
+description: Mobile app technical architect. Use whenever the user needs to choose a tech stack or framework (Flutter, React Native, Kotlin, Unity), design the backend, data model, auth, API, offline sync, payments or analytics architecture, plan milestones, or create an AGENTS.md for a new app repo. Also use for "how should I build this app", "what backend", "set up the architecture", or phase 2 of App Studio. Reads APP_BRIEF.md; produces TECH_SPEC.md and AGENTS.md.
 ---
 
 # App Architect
@@ -23,10 +23,10 @@ Pick Flutter unless one of these is true:
 | Sharing code with a React web app | React Native + Expo |
 | Android-only and deeply OS-bound (home widgets as the core, Wear OS, heavy background services, low-level hardware) | Kotlin + Jetpack Compose |
 | Extending an existing Kotlin Android codebase to iOS | Kotlin Multiplatform |
-State the choice and the one-line reason. Unity → read `references/stack-unity.md` and fill `assets/CLAUDE.unity.md.template` instead of the Flutter one. Other non-Flutter → `references/stack-alternatives.md`.
+State the choice and the one-line reason. Unity → read `references/stack-unity.md` and fill `assets/AGENTS.unity.md.template` instead of the Flutter one. Other non-Flutter → `references/stack-alternatives.md`.
 
 ### Step 2 — Backend decision
-Use `references/backend-choice.md`. User default: read `studio.config.md` (Stack → Backend); if not set, **self-hosted on Coolify** (PocketBase for simple apps, Supabase for relational/RLS needs). Prefer **no backend / local-first** when the brief allows it (no accounts, no sync). If there is a backend, copy the self-hosting production checklist into TECH_SPEC §5.
+Use `references/backend-choice.md`. User default: read `studio.config.md` (Stack → Backend); if not set, **self-hosted on a VPS** (e.g. with Coolify; PocketBase for simple apps, Supabase for relational/RLS needs). Prefer **no backend / local-first** when the brief allows it (no accounts, no sync). If there is a backend, copy the self-hosting production checklist into TECH_SPEC §5.
 
 ### Step 3 — Architecture
 Produce, using the default stack in `references/stack-flutter.md`:
@@ -44,8 +44,8 @@ Split the MVP into 4–8 milestones; each milestone = a shippable vertical slice
 
 ### Step 5 — Deliver
 1. Fill `assets/TECH_SPEC.template.md` → file `TECH_SPEC.md` (target ≤ 2 pages).
-2. Fill `assets/CLAUDE.md.template` → file `CLAUDE.md` for the repo root (≤ 120 lines — Claude Code loads it on every session, so every line costs tokens).
-3. **Saving (see app-studio skill):** in Claude Code, write files straight into the app's `docs/` (no user action). In a chat, give the complete file for the user to save. TECH_SPEC.md → `docs/`, CLAUDE.md → app repo root. Next phase: app-designer.
+2. Fill `assets/AGENTS.md.template` → file `AGENTS.md` for the repo root, plus `CLAUDE.md` containing only `@AGENTS.md` (≤ 120 lines — Claude Code loads it on every session, so every line costs tokens).
+3. **Saving (see app-studio skill):** in Claude Code, write files straight into the app's `docs/` (no user action). In a chat, give the complete file for the user to save. TECH_SPEC.md → `docs/`, AGENTS.md → app repo root. Next phase: app-designer.
 
 ## Rules
 - Pin versions: say "current stable at bootstrap, then pinned". Look up current stable versions with one search if you need specific numbers; never guess version numbers.

@@ -30,7 +30,7 @@
 
 ## §3b AdMob setup (default)
 - Create the AdMob app, link it to the Play listing once published, and link to Firebase.
-- Publish **app-ads.txt** at the root of the developer website in the Play listing (a simple static page on the user's own domain via Coolify works). Ads can serve with limited demand until it verifies.
+- Publish **app-ads.txt** at the root of the developer website in the Play listing (GitHub Pages or any static host works). Ads can serve with limited demand until it verifies.
 - Set up the UMP privacy & messaging forms (GDPR + US states) in AdMob.
 - Expect limited ad serving for brand-new AdMob apps/accounts while Google reviews them.
 

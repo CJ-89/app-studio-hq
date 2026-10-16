@@ -8,7 +8,7 @@ The kit holds no personal data. Your defaults, portfolio and apps live in **your
 | # | Phase | Skill | Output (in `apps/<slug>/docs/`) |
 |---|---|---|---|
 | 1 | Plan | app-planner | APP_BRIEF.md |
-| 2 | Architect | app-architect | TECH_SPEC.md, CLAUDE.md |
+| 2 | Architect | app-architect | TECH_SPEC.md, AGENTS.md |
 | 3 | Design | app-designer | DESIGN_SYSTEM.md, design_tokens.json |
 | 4 | Build | app-engineer | TASKS.md, Claude Code prompts |
 | 5 | QA | app-qa-security | TEST_PLAN.md, release gate, privacy/Data Safety |
@@ -24,7 +24,7 @@ The kit holds no personal data. Your defaults, portfolio and apps live in **your
 ```
 skills/      role skills (copy into ~/.claude/skills/ or upload to claude.ai)
 templates/   APP_BRIEF, TECH_SPEC, DESIGN_SYSTEM, TASKS, TEST_PLAN, LAUNCH_PLAN, HANDOFF,
-             PORTFOLIO, studio.config, CLAUDE.md (studio + app) templates
+             PORTFOLIO, studio.config, AGENTS.md (studio + app) templates
 scripts/     new-app.sh: creates apps/<slug>/ + a private GitHub repo
 ```
 
@@ -35,13 +35,16 @@ scripts/     new-app.sh: creates apps/<slug>/ + a private GitHub repo
    ```
    cp <kit>/templates/studio.config.template.md studio.config.md   # fill it in
    cp <kit>/templates/PORTFOLIO.template.md PORTFOLIO.md
-   cp <kit>/templates/CLAUDE.studio.md.template CLAUDE.md
+   cp <kit>/templates/AGENTS.studio.md.template AGENTS.md
+   cp <kit>/templates/CLAUDE.md.template CLAUDE.md                 # just "@AGENTS.md"
    echo "apps/" >> .gitignore
    ```
-4. Open Claude Code in the studio repo and type `new app <slug> flutter`. That runs `scripts/new-app.sh`, which creates `apps/<slug>/` and a private `<owner>/<slug>` repo.
+4. Open Claude Code in the studio repo and type `new app <slug> flutter`. That runs `scripts/new-app.sh`, which creates `apps/<slug>/` (package `<prefix>.<slug>`), a private `<owner>/<slug>` repo, a `PORTFOLIO.md` row and, if you set a site repo in `studio.config.md`, the app's entry in that site (`scripts/add-app.mjs`).
 5. Type `next` to start planning.
 
-Requires `git`, the `gh` CLI (logged in) and Claude Code. Recommended: `gitleaks`.
+`AGENTS.md` is the rules file in every repo (works with any AI coding agent); `CLAUDE.md` only contains `@AGENTS.md` so Claude Code loads it.
+
+Requires `git`, the `gh` CLI (logged in) and Claude Code. Recommended: `gitleaks`, Node 18+ (for a site repo).
 
 ## License
 MIT. See [LICENSE](LICENSE).

@@ -7,6 +7,11 @@ The App Studio skills read this file for anything personal. Fill it once.
 - Studio name: <Studio name>
 - Business base: <country> (decides which privacy law applies, e.g. Singapore PDPA, GDPR)
 - Kit path: `<path to your app-studio-hq clone>` (used to run `scripts/new-app.sh`)
+- Package prefix: `<com.yourstudio>` (app id = `<prefix>.<slug>`)
+- Support email: <support@example.com>
+- Developer website: <https://you.github.io> (Play Console → Store settings → Website; hosts app-ads.txt)
+- Site repo (local path): `<path to your site repo, or none>` (static site with app-ads.txt + privacy pages, `site.config.json` + `scripts/add-app.mjs`)
+- Privacy policy URL pattern: <https://you.github.io/<slug>/privacy/>
 
 ## Stack
 - Apps: Flutter (Android first). Games: Unity 6.

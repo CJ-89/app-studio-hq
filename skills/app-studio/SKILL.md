@@ -12,7 +12,7 @@ Read `studio.config.md` at the studio root before anything else. It holds the ow
 If it's missing, copy `templates/studio.config.template.md` from the kit to the studio root, ask the user to fill it once, and continue.
 
 ## Where things live
-**Claude Code mode (preferred, zero copy-paste):** the studio root (your private studio repo) contains `studio.config.md`, `PORTFOLIO.md` and `apps/<slug>/` (gitignored; each is its own private repo with `CLAUDE.md` and `docs/`). Read and write files directly; never ask the user to copy files.
+**Claude Code mode (preferred, zero copy-paste):** the studio root (your private studio repo) contains `studio.config.md`, `PORTFOLIO.md` and `apps/<slug>/` (gitignored; each is its own private repo with `AGENTS.md` and `docs/`). Read and write files directly; never ask the user to copy files.
 **Chat mode (Claude app):** PORTFOLIO.md arrives via GitHub sync in project knowledge — if it looks stale, ask the user to tap Sync. If a local folder is connected to the chat (desktop), read the studio root's `PORTFOLIO.md` directly instead. Hand build work to Claude Code with `send to code`.
 
 ## Phase detection (per app, from `apps/<slug>/docs/`)
@@ -62,8 +62,9 @@ Include only files created or changed in this chat. Never include secrets. Tell 
 Reverse direction (code → phone): the studio root is a private GitHub repo synced into the HQ project. In Claude Code, after **any** PORTFOLIO.md change, run `git -C <studio root> add PORTFOLIO.md && git -C <studio root> commit -m "portfolio: <change>" && git -C <studio root> push` (skip silently if no remote). The user just taps **Sync** in HQ. `send to hq` = do this now and confirm.
 
 ## Create a new app (Claude Code mode, `new app <slug> flutter|unity`)
-1. From the studio root run `<kit path from studio.config.md>/scripts/new-app.sh <slug> <flutter|unity>`. It creates `apps/<slug>/` from the kit templates (`CLAUDE.md`, `docs/`, secrets `.gitignore`; add `--server` for a `server/` placeholder), makes the first commit and creates a **private** GitHub repo `<owner>/<slug>` (owner = `GitHub owner` in `studio.config.md`, or `OWNER=…`).
-2. Add the app to PORTFOLIO.md (status: Plan, repo link) and mark it **current**. Commit + push PORTFOLIO.md.
+1. From the studio root run `<kit path from studio.config.md>/scripts/new-app.sh <slug> <flutter|unity>`. It creates `apps/<slug>/` from the kit templates (`AGENTS.md`, `docs/`, secrets `.gitignore`; add `--server` for a `server/` placeholder), makes the first commit and creates a **private** GitHub repo `<owner>/<slug>` (owner = `GitHub owner` in `studio.config.md`, or `OWNER=…`).
+   Package id = `Package prefix` from `studio.config.md` + slug. The script also adds a PORTFOLIO.md row (Plan, repo link) and, if `Site repo (local path)` is set, adds the app to the site (`scripts/add-app.mjs`, unlisted, committed locally, not pushed).
+2. Fill in the PORTFOLIO.md row (slot, name) and mark it **current**. Commit + push PORTFOLIO.md. Ask before pushing the site repo (publishing).
 3. Never make an app repo public.
 Tell the user in one line, then start app-planner.
 

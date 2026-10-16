@@ -10,7 +10,7 @@
 | `next` | Starts the skill for the current phase |
 | `new idea` / `no idea, suggest 5` | Planner, mode A / B |
 | `idea: <one line>` | Planner starts the interview on that idea |
-| `architect` | Tech stack, backend, milestones → TECH_SPEC + CLAUDE.md |
+| `architect` | Tech stack, backend, milestones → TECH_SPEC + AGENTS.md |
 | `design` / `improve UI` + screenshot | Designer, new design / improve mode |
 | `store assets` | Icon, feature graphic, screenshot plan |
 | `plan M1` | Splits milestone M1 into tasks (TASKS.md) |

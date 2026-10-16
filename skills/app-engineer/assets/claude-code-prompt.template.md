@@ -2,7 +2,7 @@ Task <M#-T#>: <title>
 
 Goal: <1–2 lines — the user-visible result>
 
-Read first: CLAUDE.md, <docs/TECH_SPEC.md §n>, <docs/DESIGN_SYSTEM.md — screen "<name>">, <specific lib/... files>
+Read first: AGENTS.md, <docs/TECH_SPEC.md §n>, <docs/DESIGN_SYSTEM.md — screen "<name>">, <specific lib/... files>
 
 Scope: only <lib/features/<feature>/**, test/features/<feature>/**>. Ask before touching anything else.
 

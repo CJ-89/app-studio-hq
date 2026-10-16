@@ -4,14 +4,14 @@ Use these unless the brief gives a reason not to. One choice per layer — never
 
 | Layer | Default | Notes |
 |---|---|---|
-| Framework | Flutter stable channel | Pin the version at bootstrap (`.fvmrc` with FVM, or note it in CLAUDE.md). Upgrade deliberately between milestones. |
+| Framework | Flutter stable channel | Pin the version at bootstrap (`.fvmrc` with FVM, or note it in AGENTS.md). Upgrade deliberately between milestones. |
 | Language | Dart, null-safe, strict analysis | |
 | State management | Riverpod (with code generation) | Bloc acceptable if the user prefers strict event/state structure — decide once. |
 | Navigation | go_router | Typed routes if the project grows. |
 | Models | freezed + json_serializable | Run build_runner after model changes. |
 | Local storage | shared_preferences (settings); drift or isar-type local DB for structured data | Choose one DB only. |
 | Networking | The backend's SDK (pocketbase / supabase_flutter); dio only for other HTTP APIs | |
-| Backend | Self-hosted on Coolify: PocketBase (`pocketbase` Dart SDK) or Supabase (`supabase_flutter`) — see backend-choice.md | Local-first if no accounts/sync needed. |
+| Backend | Self-hosted (e.g. Coolify on a VPS): PocketBase (`pocketbase` Dart SDK) or Supabase (`supabase_flutter`) — see backend-choice.md | Local-first if no accounts/sync needed. |
 | Auth | Backend's auth (PocketBase / Supabase); Google Sign-In on Android | Needs in-app account deletion if accounts exist. |
 | Payments | `in_app_purchase` for a "Remove ads" one-time unlock (recommended alongside ads); RevenueCat only if the app has subscriptions | |
 | Ads (default model) | google_mobile_ads (AdMob) + UMP consent SDK | Default money model. Wrap in an `AdsService`; test ad IDs in dev flavor, real IDs only in prod. Adds consent, Data Safety and app-ads.txt work. |
@@ -38,7 +38,7 @@ integration_test/
 ```
 Why: Claude Code can work on one feature by reading one folder, which keeps each task small and cheap.
 
-## Conventions to put in CLAUDE.md
+## Conventions to put in AGENTS.md
 - Repositories return typed results; UI never calls the backend directly.
 - All user-facing strings in ARB files.
 - Theme values come from the design tokens; no hard-coded colors or sizes in widgets.

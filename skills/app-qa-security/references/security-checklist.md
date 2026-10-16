@@ -8,7 +8,7 @@
 
 ## Self-hosted server (e.g. Coolify on a VPS)
 - [ ] Off-server daily backups working; a restore was tested
-- [ ] Only 80/443 public; SSH key-only; Coolify dashboard and backend admin UIs not openly reachable (or strong auth + 2FA)
+- [ ] Only 80/443 public; SSH key-only; hosting dashboard (e.g. Coolify) and backend admin UIs not openly reachable (or strong auth + 2FA)
 - [ ] Backend image and OS patched within the last month
 - [ ] Uptime + disk alerts reach your phone
 - [ ] Dev and prod are separate instances with separate credentials

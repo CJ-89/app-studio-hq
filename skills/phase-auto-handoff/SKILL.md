@@ -11,7 +11,7 @@ Run these steps in order. Don't ask before doing them. Only ask if a push fails.
 2. **HANDOFF.md**: write `apps/<slug>/docs/HANDOFF.md` with the chat-handoff skill's template (`templates/HANDOFF.template.md`). Never include secrets.
 3. **PORTFOLIO.md**: update the app's row (phase, a one-line note).
 4. **Commit + push**:
-   - `git -C apps/<slug> add docs CLAUDE.md && git -C apps/<slug> commit -m "docs: end of phase <n> <name>" && git -C apps/<slug> push`
+   - `git -C apps/<slug> add docs AGENTS.md CLAUDE.md && git -C apps/<slug> commit -m "docs: end of phase <n> <name>" && git -C apps/<slug> push`
    - `git add PORTFOLIO.md && git commit -m "portfolio: <slug> → phase <n+1>" && git push` (in the studio root)
    - Skip a push silently if the repo has no remote. Never commit secret files (see the app's `.gitignore`).
 5. **Resume line**: end the reply with exactly:

@@ -1,6 +1,6 @@
 # Unity stack (games)
 
-The user builds games in Unity on a Mac (Unity 6 line) for Google Play. Pin the exact editor version per project in TECH_SPEC and CLAUDE.md.
+The user builds games in Unity on a Mac (Unity 6 line) for Google Play. Pin the exact editor version per project in TECH_SPEC and AGENTS.md.
 
 ## Defaults
 | Layer | Default | Notes |
@@ -15,7 +15,7 @@ The user builds games in Unity on a Mac (Unity 6 line) for Google Play. Pin the 
 | Ads (default) | Google Mobile Ads Unity plugin (AdMob) + UMP consent | Rewarded ads first, interstitials capped (see monetization.md) |
 | IAP | Unity IAP ("Remove ads", optional currency packs) | |
 | Crash/analytics | Firebase Unity SDK (Crashlytics + Analytics) | |
-| Backend | None by default; if leaderboards/cloud save needed → PocketBase on Coolify, or Google Play Games Services for leaderboards/achievements | |
+| Backend | None by default; if leaderboards/cloud save needed → self-hosted PocketBase, or Google Play Games Services for leaderboards/achievements | |
 | Tests | Unity Test Framework (EditMode for logic, PlayMode for gameplay) | |
 | Build | Editor build script + command-line batchmode build | Lets Claude Code build without clicking |
 

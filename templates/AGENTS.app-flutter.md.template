@@ -1,4 +1,4 @@
-# <App name> — instructions for Claude Code
+# <App name> — rules for AI coding agents
 
 ## What this is
 <One-liner from APP_BRIEF.> Spec: `docs/TECH_SPEC.md`. Design: `docs/DESIGN_SYSTEM.md` + `docs/design_tokens.json`. Task backlog: `docs/TASKS.md`.
@@ -6,7 +6,7 @@
 ## Stack (locked — do not change without asking)
 - Flutter <version> (pinned) · Dart null-safe
 - State: Riverpod (codegen) · Navigation: go_router · Models: freezed + json_serializable
-- Backend: <PocketBase/Supabase self-hosted on Coolify / none> at `<API_BASE_URL per flavor>` · Ads: AdMob via `AdsService` · Remove-ads IAP: <yes/no> · Crash/analytics: Firebase
+- Backend: <PocketBase/Supabase self-hosted (e.g. Coolify) / managed / none> at `<API_BASE_URL per flavor>` · Ads: AdMob via `AdsService` · Remove-ads IAP: <yes/no> · Crash/analytics: Firebase
 - Lints: very_good_analysis
 
 ## Structure

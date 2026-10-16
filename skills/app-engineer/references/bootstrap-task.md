@@ -1,11 +1,11 @@
 # M0 — Project bootstrap (Claude Code prompt)
 
-Give this to Claude Code in an empty folder, after placing CLAUDE.md in the root and docs/TECH_SPEC.md, docs/DESIGN_SYSTEM.md, docs/design_tokens.json and docs/TASKS.md in it. Fill the <> values from TECH_SPEC.
+Give this to Claude Code in an empty folder, after placing AGENTS.md in the root and docs/TECH_SPEC.md, docs/DESIGN_SYSTEM.md, docs/design_tokens.json and docs/TASKS.md in it. Fill the <> values from TECH_SPEC.
 
 ```
-Goal: Create the Flutter project skeleton for <App name> exactly as described in CLAUDE.md and docs/TECH_SPEC.md.
+Goal: Create the Flutter project skeleton for <App name> exactly as described in AGENTS.md and docs/TECH_SPEC.md.
 
-Read first: CLAUDE.md, docs/TECH_SPEC.md (sections 1, 7), docs/design_tokens.json.
+Read first: AGENTS.md, docs/TECH_SPEC.md (sections 1, 7), docs/design_tokens.json.
 
 Steps:
 1. `flutter create --org <reverse.domain> --project-name <snake_name> --platforms android,ios .` (iOS folder kept for later).

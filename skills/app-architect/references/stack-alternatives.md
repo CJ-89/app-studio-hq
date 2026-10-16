@@ -16,4 +16,4 @@ Unity (games) has its own file: `stack-unity.md`.
 - Shared `commonMain` for data/domain; Compose Multiplatform UI or native SwiftUI on iOS.
 - Requires a Mac + Xcode for iOS builds. Smaller ecosystem than Flutter — check every needed library supports KMP before committing.
 
-For every alternative, keep the same TECH_SPEC and CLAUDE.md templates; replace the stack table and commands.
+For every alternative, keep the same TECH_SPEC and AGENTS.md templates; replace the stack table and commands.
