@@ -22,25 +22,27 @@ The kit holds no personal data. Your defaults, portfolio and apps live in **your
 
 ## Layout
 ```
-skills/      role skills (copy into ~/.claude/skills/ or upload to claude.ai)
+skills/      role skills (symlinked into ~/.claude/skills/ or zipped for claude.ai)
 templates/   APP_BRIEF, TECH_SPEC, DESIGN_SYSTEM, TASKS, TEST_PLAN, LAUNCH_PLAN, HANDOFF,
              PORTFOLIO, studio.config, AGENTS.md (studio + app) templates
-scripts/     new-app.sh: creates apps/<slug>/ + a private GitHub repo
+scripts/     install-skills.sh, package-skills.sh, new-app.sh (apps/<slug>/ + private repo)
 ```
 
-## Quick start
-1. Clone this kit, for example to `~/Repo/app-studio-hq`.
-2. Install the skills: `cp -R skills/* ~/.claude/skills/` (Claude Code). For the Claude app, zip each skill folder and upload it under Settings → Capabilities → Skills.
-3. Create your **private** studio repo (`gh repo create <you>/my-studio --private --clone`), then copy in the starting files:
+## Setup
+1. **Fork or clone the kit**, for example to `<your-dir>/app-studio-hq`.
+2. **Install the skills for Claude Code:** `scripts/install-skills.sh`. It symlinks each `skills/<name>` into `~/.claude/skills/<name>`, so `git pull` updates them. Safe to re-run; it never overwrites a real folder.
+3. **Create your private studio repo** from the templates:
    ```
+   gh repo create <owner>/<studio-repo> --private --clone && cd <studio-repo>
    cp <kit>/templates/studio.config.template.md studio.config.md   # fill it in
    cp <kit>/templates/PORTFOLIO.template.md PORTFOLIO.md
    cp <kit>/templates/AGENTS.studio.md.template AGENTS.md
    cp <kit>/templates/CLAUDE.md.template CLAUDE.md                 # just "@AGENTS.md"
    echo "apps/" >> .gitignore
    ```
-4. Open Claude Code in the studio repo and type `new app <slug> flutter`. That runs `scripts/new-app.sh`, which creates `apps/<slug>/` (package `<prefix>.<slug>`), a private `<owner>/<slug>` repo, a `PORTFOLIO.md` row and, if you set a site repo in `studio.config.md`, the app's entry in that site (`scripts/add-app.mjs`).
-5. Type `next` to start planning.
+4. **claude.ai project:** create a project and paste `templates/claude-project-instructions.md` into its instructions (replace the `<...>` placeholders).
+5. **claude.ai skills:** `scripts/package-skills.sh`, then upload each `dist/*.zip` under Settings → Capabilities → Skills.
+6. **New app:** open Claude Code in the studio repo and type `new app <slug> flutter` (or `unity`). That runs `scripts/new-app.sh`, which creates `apps/<slug>/` (package `<prefix>.<slug>`), a private `<owner>/<slug>` repo, a `PORTFOLIO.md` row and, if you set a site repo in `studio.config.md`, the app's entry in that site. Then type `next` to start planning.
 
 `AGENTS.md` is the rules file in every repo (works with any AI coding agent); `CLAUDE.md` only contains `@AGENTS.md` so Claude Code loads it.
 
